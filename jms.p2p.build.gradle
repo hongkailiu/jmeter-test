@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.apache.activemq', name: 'activemq-all', version: '5.15.4'
+}
+
+task copyLibs(type: Copy) {
+    from configurations.compile
+    into 'lib'
+}
